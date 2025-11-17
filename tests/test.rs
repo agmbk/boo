@@ -82,16 +82,56 @@ fn test_literal_byte() {
 #[test]
 fn test_literal_str() {
     assert_eq!(boo!("\0\n\\ 09azAZ \u{10FFFF}"), "\0\n\\ 09azAZ \u{10FFFF}");
+
+    assert_eq!(boo!(r"raw"), r"raw");
+    assert_eq!(boo!(r#"raw"#), r#"raw"#);
+    assert_eq!(
+        boo!(
+            r#"
+        multiline
+        "#
+        ),
+        r#"
+        multiline
+        "#
+    );
 }
 
 #[test]
 fn test_literal_bstr() {
     assert_eq!(boo!(b"\0\n\\ 09azAZ"), b"\0\n\\ 09azAZ".to_owned());
+
+    assert_eq!(boo!(br"raw"), br"raw".to_owned());
+    assert_eq!(boo!(br#"raw"#), br#"raw"#.to_owned());
+    assert_eq!(
+        boo!(
+            br#"
+        multiline
+        "#
+        ),
+        br#"
+        multiline
+        "#
+        .to_owned()
+    );
 }
 
 #[test]
 fn test_literal_cstr() {
     assert_eq!(boo!(c"\n\\ 09azAZ \u{10FFFF}"), c"\n\\ 09azAZ \u{10FFFF}");
+
+    assert_eq!(boo!(cr"raw"), cr"raw");
+    assert_eq!(boo!(cr#"raw"#), cr#"raw"#);
+    assert_eq!(
+        boo!(
+            cr#"
+        multiline
+        "#
+        ),
+        cr#"
+        multiline
+        "#
+    );
 }
 
 #[test]
