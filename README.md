@@ -7,14 +7,14 @@
 
 <br>
 
-Boo encrypts literal data at compile time and keeps it encrypted in the binary, preventing static analysis tools from
+Boo encrypts literal data at compile time in the final binary, preventing static analysis tools from
 reading values.  
 At runtime, decrypted data is exposed in memory only for the shortest possible time.
 
-Boo provides compile-time literal encryption beyond strings. It can encrypt numbers, characters, strings, byte strings,
+It supports many literal types beyond strings, including numbers, characters, byte strings,
 C-strings,
-arrays, tuples, nested structures...  
-Use the `boo!()` macro around your Rust literals and get them encrypted in the final binary.
+arrays, tuples, nested structures...    
+Use the `boo!()` macro to effortlessly encrypt your data.
 
 ## Usage
 
@@ -71,8 +71,9 @@ For a full reference, see the [showcase](examples/types-showcase.rs) file.
 
 Decryption happens on the stack. The cost is O(n), where n is the length of the data in bytes.
 
-All decrypted types except `String` and `CStr` are stored on the stack.    
-`&str` and `&CStr` decryption are stored into their heap-allocated variants.
+- All decrypted types except `String` and `CStr` are stored on the stack without performance overhead.
+- `&str` and `&CStr` decryption are stored into their heap-allocated variants.
+- Special case: binary strings are decrypted into owned `[u8]` arrays.
 
 ## Roadmap
 
