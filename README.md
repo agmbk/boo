@@ -7,7 +7,7 @@
 
 <br>
 
-Boo encrypts literal data at compile time in the final binary, preventing static analysis tools from
+Boo encrypts literal data in the final binary, at compile time, preventing static analysis tools from
 reading values.  
 At runtime, decrypted data is exposed in memory only for the shortest possible time.
 
