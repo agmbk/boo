@@ -1,0 +1,23 @@
+[package]
+name = "boo"
+version = "0.1.0"
+edition = "2024"
+authors = ["AGMBK"]
+description = "Encrypt primitives types at compile time"
+license = "MIT"
+readme = "README.md"
+keywords = ["encrypt", "obfuscation"]
+categories = ["security"]
+
+[lib]
+proc-macro = true
+path = "src/lib.rs"
+
+[features]
+std = []
+
+[dependencies]
+proc-macro2 = "1.0.24"
+quote = "1.0.8"
+rand = "0.9.0"
+syn = { version = "2.0.104", features = ["full", "parsing"] }
