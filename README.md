@@ -1,4 +1,4 @@
-<img align="left" width="90" height="90" src="assets/boo.png">
+<img align="left" width="110" height="110" src="assets/boo.png">
 <p vertical-align="middle"><h1>Boo</h1></p>
 
 [![Crates.io](https://img.shields.io/crates/v/boo-rs)](https://crates.io/crates/boo-rs)
