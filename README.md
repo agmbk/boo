@@ -80,6 +80,7 @@ Decryption happens on the stack. The cost is O(n), where n is the length of the 
 - [ ] Stack allocated str using a wrapper struct around a fixed `u8` array.
 - [ ] Stack allocated Cstr using a wrapper struct around a fixed `u8` array.
 - [ ] Numeric suffix support (ex. `1u8`, `1u16`, `0f32`) using `syn::Lit::suffix()`.
+- [ ] Wide string support using the custom syntax: `w"Wide null terminated"`.
 
 ## License
 
